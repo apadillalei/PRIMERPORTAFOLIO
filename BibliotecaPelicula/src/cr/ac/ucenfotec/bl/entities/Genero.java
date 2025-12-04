@@ -1,4 +1,4 @@
-package cr.ac.ucenfotec.moviecloud.model;
+package cr.ac.ucenfotec.bl.entities;
 
 public class Genero {
     private String nombre; /*Accion, Drama, Comedia, Terror, Infantil...*/

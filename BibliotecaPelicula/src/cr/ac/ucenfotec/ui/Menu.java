@@ -1,4 +1,4 @@
-package cr.ac.ucenfotec.moviecloud.app;
+package cr.ac.ucenfotec.ui;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,10 +1,10 @@
-package cr.ac.ucenfotec.moviecloud.app;
+package cr.ac.ucenfotec.ui;
 
-import cr.ac.ucenfotec.moviecloud.model.Administrador;
-import cr.ac.ucenfotec.moviecloud.model.Director;
-import cr.ac.ucenfotec.moviecloud.model.Genero;
-import cr.ac.ucenfotec.moviecloud.model.Pelicula;
-import cr.ac.ucenfotec.moviecloud.model.User;
+import cr.ac.ucenfotec.bl.entities.Administrador;
+import cr.ac.ucenfotec.bl.entities.Director;
+import cr.ac.ucenfotec.bl.entities.Genero;
+import cr.ac.ucenfotec.bl.entities.Pelicula;
+import cr.ac.ucenfotec.bl.entities.User;
 
 import java.io.BufferedReader;
 import java.io.IOException;

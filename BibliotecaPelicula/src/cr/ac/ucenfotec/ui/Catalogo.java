@@ -1,8 +1,8 @@
-package cr.ac.ucenfotec.moviecloud.service;
+package cr.ac.ucenfotec.ui;
 
-import cr.ac.ucenfotec.moviecloud.model.Director;
-import cr.ac.ucenfotec.moviecloud.model.Genero;
-import cr.ac.ucenfotec.moviecloud.model.Pelicula;
+import cr.ac.ucenfotec.bl.entities.Director;
+import cr.ac.ucenfotec.bl.entities.Genero;
+import cr.ac.ucenfotec.bl.entities.Pelicula;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -79,7 +79,6 @@ public class Catalogo {
         return true;
     }
 
-    // small render helper
     public String renderLine(Pelicula p) {
         String dir = (p.getDirector() == null) ? "N/A" : p.getDirector().getNombre();
         String gs = (p.getGeneros() == null || p.getGeneros().isEmpty())

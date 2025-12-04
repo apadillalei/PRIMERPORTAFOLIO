@@ -1,4 +1,4 @@
-package cr.ac.ucenfotec.moviecloud.model;
+package cr.ac.ucenfotec.bl.entities;
 
 import java.util.LinkedHashSet;
 import java.util.Objects;
