@@ -1,4 +1,4 @@
-package cr.ac.ucenfotec;
+package cr.ac.ucenfotec.ui;
 
 import cr.ac.ucenfotec.tl.Controller;
 
