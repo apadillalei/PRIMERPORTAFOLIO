@@ -1,33 +1,37 @@
 package cr.ac.ucenfotec.bl.entities;
 
-import java.util.Set;
+import java.util.ArrayList;
 
 public class Director {
     private String id;
     private String nombre;
-    private Set<Pelicula> peliculasDirigidas;
+    private ArrayList<Pelicula> peliculasDirigidas;
 
-    public String getId() {
-        return id;
+    // Constructor por defecto
+    public Director() {
+        this.peliculasDirigidas = new ArrayList<>();
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public Set<Pelicula> getPeliculasDirigidas() {
-        return peliculasDirigidas;
-    }
-
-    public void setId(String id) {
+    // Constructor completo
+    public Director(String id, String nombre, ArrayList<Pelicula> peliculasDirigidas) {
         this.id = id;
-    }
-
-    public void setNombre(String nombre) {
         this.nombre = nombre;
+        this.peliculasDirigidas = (peliculasDirigidas != null)
+                ? peliculasDirigidas
+                : new ArrayList<>();
     }
 
-    public void setPeliculasDirigidas(Set<Pelicula> peliculasDirigidas) {
-        this.peliculasDirigidas = peliculasDirigidas;
+    // GETTERS & SETTERS
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
+
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public ArrayList<Pelicula> getPeliculasDirigidas() { return peliculasDirigidas; }
+    public void setPeliculasDirigidas(ArrayList<Pelicula> peliculasDirigidas) {
+        this.peliculasDirigidas = (peliculasDirigidas != null)
+                ? peliculasDirigidas
+                : new ArrayList<>();
     }
 }

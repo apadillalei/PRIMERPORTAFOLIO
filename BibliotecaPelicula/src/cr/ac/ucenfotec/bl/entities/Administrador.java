@@ -4,17 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Administrador {
-    private String id;
-    private String username;
-    private String email;
+public class Administrador extends Cuenta {
+
     private List<String> privilegios;
 
-    // ----- CONSTRUCTOR -----
+    // Constructor por defecto
+    public Administrador() {
+        super();
+        this.privilegios = new ArrayList<>();
+    }
+
+    // Constructor completo
     public Administrador(String id, String username, String email, List<String> privilegios) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
+        super(id, username, email);
         this.privilegios = (privilegios != null) ? privilegios : new ArrayList<>();
     }
 
@@ -34,18 +36,10 @@ public class Administrador {
     }
 
     // ----- GETTERS & SETTERS -----
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
-
-    public String getUsername() { return username; }
-    public void setUsername(String username) { this.username = username; }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-
     public List<String> getPrivilegios() { return privilegios; }
-    public void setPrivilegios(List<String> privilegios) { this.privilegios = privilegios; }
-
+    public void setPrivilegios(List<String> privilegios) {
+        this.privilegios = (privilegios != null) ? privilegios : new ArrayList<>();
+    }
 
     // ----- MÉTODOS UTILITARIOS -----
     @Override

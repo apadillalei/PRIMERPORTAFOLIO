@@ -1,82 +1,44 @@
 package cr.ac.ucenfotec.bl.entities;
 
-import java.util.LinkedHashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.ArrayList;
 
-public class User {
-    private String id;
-    private String username;
-    private String email;
-    private Set<Pelicula> favoritos;
+public class User extends Cuenta {
 
-    // ------ CONSTRUCTOR COMPLETO ------
-    public User(String id, String username, String email, Set<Pelicula> favoritos) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.favoritos = (favoritos != null) ? favoritos : new LinkedHashSet<>();
+    private ArrayList<Pelicula> favoritos;
+
+    // Constructor por defecto
+    public User() {
+        super();
+        this.favoritos = new ArrayList<>();
     }
 
-    // ------ CONSTRUCTOR ------
+    // Constructor completo
+    public User(String id, String username, String email, ArrayList<Pelicula> favoritos) {
+        super(id, username, email);
+        this.favoritos = (favoritos != null) ? favoritos : new ArrayList<>();
+    }
+
+    // Constructor simplificado
     public User(String id, String username, String email) {
-        this(id, username, email, new LinkedHashSet<>());
+        this(id, username, email, new ArrayList<>());
     }
 
-    // ------ MÉTODOS DE COMPORTAMIENTO ------
-    public boolean agregarFavorito(Pelicula pelicula) {
-        return pelicula != null && favoritos.add(pelicula);
+    // ===== FAVORITOS =====
+    public boolean agregarFavorito(Pelicula p) {
+        if (p == null) return false;
+        if (!favoritos.contains(p)) return favoritos.add(p);
+        return false;
     }
 
-    public boolean eliminarFavorito(Pelicula pelicula) {
-        return pelicula != null && favoritos.remove(pelicula);
+    public boolean eliminarFavorito(Pelicula p) {
+        return favoritos.remove(p);
     }
 
-
-    public boolean esFavorito(Pelicula pelicula) {
-        return pelicula != null && favoritos.contains(pelicula);
+    public ArrayList<Pelicula> getFavoritos() {
+        return favoritos;
     }
 
-    public void limpiarFavoritos() {
-        favoritos.clear();
-    }
-
-    // ------ GETTERS & SETTERS ------
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
-
-    public String getUsername() { return username; }
-    public void setUsername(String username) { this.username = username; }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-
-    public Set<Pelicula> getFavoritos() { return favoritos; }
-    public void setFavoritos(Set<Pelicula> favoritos) {
-        this.favoritos = (favoritos != null) ? favoritos : new LinkedHashSet<>();
-    }
-
-    // ------ MÉTODOS  ------
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", favoritos=" + favoritos.size() +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+    public void setFavoritos(ArrayList<Pelicula> favoritos) {
+        this.favoritos = (favoritos != null) ? favoritos : new ArrayList<>();
     }
 }

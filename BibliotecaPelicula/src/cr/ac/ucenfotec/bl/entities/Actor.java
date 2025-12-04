@@ -1,39 +1,37 @@
 package cr.ac.ucenfotec.bl.entities;
 
-import java.util.Set;
+import java.util.ArrayList;
 
 public class Actor {
     private String id;
     private String nombre;
-    private Set<Pelicula> filmografia;
+    private ArrayList<Pelicula> filmografia;
 
-    public Actor(String id, String nombre, Set<Pelicula> filmografia) {
+    // Constructor por defecto
+    public Actor() {
+        this.filmografia = new ArrayList<>();
+    }
+
+    // Constructor completo
+    public Actor(String id, String nombre, ArrayList<Pelicula> filmografia) {
         this.id = id;
         this.nombre = nombre;
-        this.filmografia = filmografia;
+        this.filmografia = (filmografia != null)
+                ? filmografia
+                : new ArrayList<>();
     }
 
-    public String getId() {
-        return id;
-    }
+    // GETTERS & SETTERS
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public Set<Pelicula> getFilmografia() {
-        return filmografia;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setFilmografia(Set<Pelicula> filmografia) {
-        this.filmografia = filmografia;
+    public ArrayList<Pelicula> getFilmografia() { return filmografia; }
+    public void setFilmografia(ArrayList<Pelicula> filmografia) {
+        this.filmografia = (filmografia != null)
+                ? filmografia
+                : new ArrayList<>();
     }
 }

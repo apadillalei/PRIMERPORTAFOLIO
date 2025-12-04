@@ -1,6 +1,6 @@
 package cr.ac.ucenfotec.bl.entities;
 
-import java.util.Set;
+import java.util.ArrayList;
 
 public class Pelicula {
     private String id;
@@ -8,124 +8,67 @@ public class Pelicula {
     private int anio;
     private int duracionMinutos;
     private String clasificacion;
-    private Set<Genero> generos;
-    private Set<Actor> elenco;
+
+    private ArrayList<Genero> generos;
+    private ArrayList<Actor> elenco;
     private Director director;
 
-    // ------ CONSTRUCTORES ------
+    public record Ficha(String sinopsis) {}
+    private Ficha ficha;
+
+    // Constructor por defecto
+    public Pelicula() {
+        this.generos = new ArrayList<>();
+        this.elenco = new ArrayList<>();
+    }
+
     public Pelicula(String id, String titulo, int anio, int duracionMinutos, String clasificacion,
-                    Set<Genero> generos, Set<Actor> elenco, Director director) {
+                    ArrayList<Genero> generos, ArrayList<Actor> elenco, Director director) {
+
         this.id = id;
         this.titulo = titulo;
         this.anio = anio;
         this.duracionMinutos = duracionMinutos;
         this.clasificacion = clasificacion;
-        this.generos = generos;
-        this.elenco = elenco;
+
+        this.generos = (generos != null) ? generos : new ArrayList<>();
+        this.elenco = (elenco != null) ? elenco : new ArrayList<>();
         this.director = director;
     }
 
     public Pelicula(String id, String titulo, int anio, int duracionMinutos, String clasificacion) {
-        this(id, titulo, anio, duracionMinutos, clasificacion, null, null, null);
+        this(id, titulo, anio, duracionMinutos, clasificacion, new ArrayList<>(), new ArrayList<>(), null);
     }
 
-    // ------ MÉTODOS ------
-    public void actualizarPelicula(String nuevoTitulo,
-                                   int nuevoAnio,
-                                   int nuevaDuracion,
-                                   String nuevaClasificacion) {
-        this.titulo = nuevoTitulo;
-        this.anio = nuevoAnio;
-        this.duracionMinutos = nuevaDuracion;
-        this.clasificacion = nuevaClasificacion;
+    // ===== GETTERS & SETTERS =====
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
+
+    public String getTitulo() { return titulo; }
+    public void setTitulo(String titulo) { this.titulo = titulo; }
+
+    public int getAnio() { return anio; }
+    public void setAnio(int anio) { this.anio = anio; }
+
+    public int getDuracionMinutos() { return duracionMinutos; }
+    public void setDuracionMinutos(int duracionMinutos) { this.duracionMinutos = duracionMinutos; }
+
+    public String getClasificacion() { return clasificacion; }
+    public void setClasificacion(String clasificacion) { this.clasificacion = clasificacion; }
+
+    public ArrayList<Genero> getGeneros() { return generos; }
+    public void setGeneros(ArrayList<Genero> generos) {
+        this.generos = (generos != null) ? generos : new ArrayList<>();
     }
 
-    public void eliminarPelicula() {
-        this.id = null;
-        this.titulo = null;
-        this.anio = 0;
-        this.duracionMinutos = 0;
-        this.clasificacion = null;
-        this.generos = null;
-        this.elenco = null;
-        this.director = null;
+    public ArrayList<Actor> getElenco() { return elenco; }
+    public void setElenco(ArrayList<Actor> elenco) {
+        this.elenco = (elenco != null) ? elenco : new ArrayList<>();
     }
 
-    public void mostrarInfo() {
-        System.out.println("Título: " + titulo +
-                ", Año: " + anio +
-                ", Duración: " + duracionMinutos + " min" +
-                ", Clasificación: " + clasificacion);
-    }
+    public Director getDirector() { return director; }
+    public void setDirector(Director director) { this.director = director; }
 
-    public record Ficha(String sinopsis) {}
-
-    private Ficha ficha;
-
-    // ------ GETTERS & SETTERS ------
-    public String getId() {
-        return id;
-    }
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public int getAnio() {
-        return anio;
-    }
-    public void setAnio(int anio) {
-        this.anio = anio;
-    }
-
-    public int getDuracionMinutos() {
-        return duracionMinutos;
-    }
-    public void setDuracionMinutos(int duracionMinutos) {
-        this.duracionMinutos = duracionMinutos;
-    }
-
-    public String getClasificacion() {
-        return clasificacion;
-    }
-    public void setClasificacion(String clasificacion) {
-        this.clasificacion = clasificacion;
-    }
-
-    public Set<Genero> getGeneros() {
-        return generos;
-    }
-    public void setGeneros(Set<Genero> generos) {
-        this.generos = generos;
-    }
-
-    public Set<Actor> getElenco() {
-        return elenco;
-    }
-    public void setElenco(Set<Actor> elenco) {
-        this.elenco = elenco;
-    }
-
-    public Director getDirector() {
-        return director;
-    }
-    public void setDirector(Director director) {
-        this.director = director;
-    }
-
-    public Ficha getFicha() {
-        return ficha;
-    }
-
-    public void setFicha(Ficha ficha) {
-        this.ficha = ficha;
-    }
-
-
+    public Ficha getFicha() { return ficha; }
+    public void setFicha(Ficha ficha) { this.ficha = ficha; }
 }
