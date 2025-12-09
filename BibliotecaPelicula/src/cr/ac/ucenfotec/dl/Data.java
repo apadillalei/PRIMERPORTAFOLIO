@@ -28,11 +28,6 @@ public class Data {
     private List<Administrador> administradores;
     private List<Director> directores;
     private List<Actor> actores;
-
-    /**
-     * Lista polimórfica que contiene todas las cuentas
-     * (usuarios y administradores) vistas como {@link Cuenta}.
-     */
     private List<Cuenta> cuentas;
 
     /**
@@ -267,7 +262,7 @@ public class Data {
         return null;
     }
 
-    // ===== CUENTAS (POLIMORFISMO) =====
+    // ===== CUENTAS =====
 
     /**
      * Devuelve la lista polimórfica de cuentas.
