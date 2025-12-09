@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Moviecloud:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/Moviecloud_jar2</output-path>
+    <root id="archive" name="Moviecloud.jar">
+      <element id="module-output" name="Moviecloud" />
+    </root>
+  </artifact>
+</component>
