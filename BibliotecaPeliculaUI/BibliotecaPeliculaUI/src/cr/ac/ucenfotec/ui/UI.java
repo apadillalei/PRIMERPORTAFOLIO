@@ -30,7 +30,7 @@ public class UI {
 
     private final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
-    // ===== MENÚS PRINCIPALES =====
+    // ===== MENUS PRINCIPALES =====
 
     /**
      * Muestra el menú principal cuando no hay sesión iniciada (modo invitado).
@@ -134,7 +134,7 @@ public class UI {
         System.out.println("════════════════════════════════════");
     }
 
-    // ===== MÉTODOS DE IO GENÉRICA =====
+    // ===== MÉTODOS DE IO =====
 
     /**
      * Imprime un mensaje simple en consola.
@@ -419,7 +419,7 @@ public class UI {
         }
     }
 
-    // ===== MOSTRAR DIRECTORES Y SUS PELÍCULAS =====
+    // ===== MOSTRAR DIRECTORES Y SUS PELiCULAS =====
 
     /**
      * Muestra todos los directores registrados junto con las películas
@@ -449,7 +449,7 @@ public class UI {
         }
     }
 
-    // ===== MOSTRAR ACTORES Y SU FILMOGRAFÍA =====
+    // ===== MOSTRAR ACTORES Y SU FILMOGRAFIA =====
 
     /**
      * Muestra todos los actores registrados con las películas en las que han participado.

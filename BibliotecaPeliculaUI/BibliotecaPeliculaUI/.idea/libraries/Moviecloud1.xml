@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Moviecloud1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../BibliotecaPelicula/out/artifacts/Moviecloud_jar2/Moviecloud.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
